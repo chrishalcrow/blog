@@ -1,0 +1,130 @@
+/* Base Resets & Variables */
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #333333;
+    --sidebar-bg: #f0f2f5;
+    --link-color: #0066cc;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-stack);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Layout Grid */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    padding: 2rem;
+    border-right: 1px solid #e1e4e8;
+}
+
+.sidebar-brand a {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+}
+
+.sidebar nav li {
+    margin-bottom: 0.75rem;
+}
+
+.sidebar nav a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.sidebar nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Article Content Styling */
+main {
+    padding: 3rem 2rem;
+    max-width: 750px;
+}
+
+article h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+article p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive design for phones/tablets */
+@media (max-width: 768px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e1e4e8;
+        padding: 1.5rem;
+    }
+    main {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   Code Blocks & Syntax Highlighting
+   ========================================================================== */
+
+/* 1. Container Styles for Fenced Code Blocks */
+pre.sourceCode {
+    background-color: #f5f7f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1.2rem;
+    overflow-x: auto; /* Adds a horizontal scrollbar if code is too wide */
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.95rem;
+    margin: 1.5rem 0;
+}
+
+/* 2. Inline Code Styles (e.g., `backticks` inside sentences) */
+:not(pre) > code {
+    background-color: #f0f2f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.9em;
+    color: #d63384; /* Classic subtle pink/red for inline code */
+}
+
+/* 3. Pandoc Syntax Highlighting Token Colors (Light Theme / Pygments style) */
+.sourceCode .co { color: #60a0b0; font-style: italic; } /* Comment */
+.sourceCode .kw { color: #007020; font-weight: bold; } /* Keyword */
+.sourceCode .dt { color: #902000; }                   /* DataType */
+.sourceCode .st { color: #4070a0; }                   /* String */
+.sourceCode .ch { color: #4070a0; }                   /* Char */
+.sourceCode .fl { color: #40a070; }                   /* Float */
+.sourceCode .nu { color: #40a070; }                   /* Number */
+.sourceCode .bu { color: #007020; }                   /* BuiltIn */
+.sourceCode .ex { color: #004080; }                   /* Extension / Command */
+.sourceCode .va { color: #19177c; }                   /* Variable */
+.sourceCode .cf { color: #007020; font-weight: bold; } /* ControlFlow (if/for) */
+.sourceCode .op { color: #666666; }                   /* Operator */
+.sourceCode .df { color: #06287e; }                   /* Function Name */
+
